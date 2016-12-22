@@ -18,6 +18,8 @@ export class hnService {
       return this.http.get('https://hn.algolia.com/api/v1/search?tags=front_page').map(res => res.json());
     } else if (orderBy == 2) {
       return this.http.get('https://hn.algolia.com/api/v1/search_by_date?tags=show_hn').map(res => res.json());
+    } else if (orderBy == 3) {
+      return this.http.get('https://hn.algolia.com/api/v1/search_by_date?tags=ask_hn').map(res => res.json());
     }
   }
 }

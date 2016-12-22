@@ -4,6 +4,7 @@ import { MyApp } from './app.component';
 import { Page1 } from '../pages/page1/page1';
 import { Page2 } from '../pages/page2/page2';
 import { Show } from '../pages/show/show';
+import { Ask } from '../pages/ask/ask';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { Show } from '../pages/show/show';
     MyApp,
     Page1,
     Page2,
-    Show
+    Show,
+    Ask
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -21,7 +23,8 @@ import { Show } from '../pages/show/show';
     MyApp,
     Page1,
     Page2,
-    Show
+    Show,
+    Ask
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

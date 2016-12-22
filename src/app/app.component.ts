@@ -6,6 +6,7 @@ import { hnService } from '../services/hn.service';
 import { Page1 } from '../pages/page1/page1';
 import { Page2 } from '../pages/page2/page2';
 import { Show } from '../pages/show/show';
+import { Ask } from '../pages/ask/ask';
 
 
 @Component({
@@ -27,7 +28,7 @@ export class MyApp {
       { title: 'New', component: Page1 },
       { title: 'Front Page', component: Page2 },
       { title: 'Show', component: Show },
-      { title: 'Ask', component: Page2 }
+      { title: 'Ask', component: Ask }
     ];
 
   }
