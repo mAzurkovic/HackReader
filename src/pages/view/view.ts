@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { hnService } from '../../services/hn.service';
 
 @Component({
@@ -7,9 +7,9 @@ import { hnService } from '../../services/hn.service';
   templateUrl: 'view.html'
 })
 export class ViewPage {
-
-  constructor(public navCtrl: NavController, private hnService:hnService) {
-
+  item: any;
+  constructor(public navCtrl: NavController, private hnService:hnService, public params:NavParams) {
+    this.item = params.get('item');
   }
 
 }
