@@ -7,7 +7,6 @@ import { Show } from '../pages/show/show';
 import { Ask } from '../pages/ask/ask';
 import { ViewPage } from '../pages/view/view';
 
-
 @NgModule({
   declarations: [
     MyApp,

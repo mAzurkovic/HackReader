@@ -1,11 +1,22 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>{{ item.title }}</ion-title>
+    <ion-title></ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
 
+<ion-content padding>
+ <h2 (tap)="openLink()">{{ item.title }}</h2>
+ <ion-grid>
+  <ion-row>
+    <ion-col width-33>{{ item.author }}</ion-col>
+    <ion-col width-33>{{ item.points }}</ion-col>
+    <ion-col width-33>{{ item.num_comments }}</ion-col>
+  </ion-row>
+</ion-grid>
+<hr>
+<p>{{ item.url }}</p>
+<p>{{ item.story_text }}</p>
 </ion-content>

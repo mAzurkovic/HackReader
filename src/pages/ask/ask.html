@@ -7,25 +7,25 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
 
   <ion-list>
     <ion-card *ngFor="let item of items">
-      <ion-card-content (click)="viewPost(item)">
+      <ion-card-content (tap)="viewPost(item)">
         <ion-grid>
           <ion-row>
-            <ion-card-title>
-              <ion-col width-30>{{ item.points }}</ion-col>
-            </ion-card-title>
-            <h1>{{ item.title }}</h1>
+            <ion-col width-20>
+              <ion-card-title>
+                {{ item.points }}
+              </ion-card-title>
+            </ion-col>
+            <ion-col width-80>
+              <h2>{{ item.title }}</h2>
+              <p>{{ item.author }}   |  <ion-icon name="chatbubbles"></ion-icon> {{ item.num_comments }}</p>
+            </ion-col>
           </ion-row>
-          <p>{{ item.url }}</p>
-          <p>
-            {{ item.author }}   |   {{  item.num_comments }}
-          </p>
         </ion-grid>
       </ion-card-content>
     </ion-card>
   </ion-list>
-
 </ion-content>

@@ -12,4 +12,8 @@ export class ViewPage {
     this.item = params.get('item');
   }
 
+  openLink() {
+    window.open((this.item.url).toString(), '_blank');
+  }
+
 }

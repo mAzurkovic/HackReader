@@ -3,7 +3,6 @@ import { NavController, NavParams } from 'ionic-angular';
 import { hnService } from '../../services/hn.service';
 import { ViewPage } from '../view/view';
 
-
 @Component({
   selector: 'page-show',
   templateUrl: 'show.html'
