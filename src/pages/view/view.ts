@@ -8,8 +8,20 @@ import { hnService } from '../../services/hn.service';
 })
 export class ViewPage {
   item: any;
+  commentParent: any;
+
   constructor(public navCtrl: NavController, private hnService:hnService, public params:NavParams) {
     this.item = params.get('item');
+  }
+
+  ngOnInit() {
+    this.getComments((this.item.objectID).toString());
+  }
+
+  getComments(postID) {
+    this.hnService.getComments(postID).subscribe(response => {
+      this.commentParent = response.hits;
+    })
   }
 
   openLink() {

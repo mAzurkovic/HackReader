@@ -5,11 +5,11 @@ import 'rxjs/Rx';
 @Injectable()
 export class hnService {
   http:any;
-  baseUrl: string;
+  baseCommentUrl: string;
 
   constructor (http:Http) {
     this.http = http;
-    this.baseUrl = 'https://hacker-news.firebaseio.com/v0/';
+    this.baseCommentUrl = 'https://hn.algolia.com/api/v1/search?tags=comment,story_';
   }
   getPosts(orderBy) {
     if (orderBy == 'new') {
@@ -22,4 +22,9 @@ export class hnService {
       return this.http.get('https://hn.algolia.com/api/v1/search_by_date?tags=ask_hn').map(res => res.json());
     }
   }
+
+  getComments(postID) {
+    return this.http.get('https://hn.algolia.com/api/v1/search?tags=comment,story_' + postID).map(res => res.json());
+  }
+
 }

@@ -8,6 +8,7 @@
 </ion-header>
 
 <ion-content padding>
+
  <h2 (tap)="openLink()">{{ item.title }}</h2>
  <ion-grid>
   <ion-row>
@@ -19,4 +20,13 @@
 <hr>
 <p>{{ item.url }}</p>
 <p>{{ item.story_text }}</p>
+
+<h4>Comments</h4>
+
+<ion-list inset>
+  <div *ngFor="let comment of commentParent">
+      <p>{{ comment.comment_text }}</p>
+  </div>
+</ion-list>
+
 </ion-content>
