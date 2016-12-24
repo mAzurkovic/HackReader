@@ -23,6 +23,7 @@
           <p>
             {{ item.author }}   |   {{  item.num_comments }}
           </p>
+          <button ion-button clear (click)="viewPost(item)">View</button>
         </ion-grid>
       </ion-card-content>
     </ion-card>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { hnService } from '../../services/hn.service';
+import { ViewPage } from '../view/view';
 
 @Component({
   selector: 'page-page1',
@@ -20,6 +21,12 @@ export class Page1 {
     this.hnService.getPosts(orderBy).subscribe(response => {
       this.items = response.hits;
     })
+  }
+
+  viewPost(item) {
+    this.navCtrl.push(ViewPage, {
+      item:item
+    });
   }
 
 }
