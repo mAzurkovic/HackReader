@@ -8,7 +8,6 @@ import { Page2 } from '../pages/page2/page2';
 import { Show } from '../pages/show/show';
 import { Ask } from '../pages/ask/ask';
 
-
 @Component({
   templateUrl: 'app.html',
   providers: [hnService]
@@ -30,7 +29,7 @@ export class MyApp {
       { title: 'Show', component: Show , icon: 'flame'},
       { title: 'Ask', component: Ask, icon: 'flame' }
     ];
-
+    
   }
 
   initializeApp() {

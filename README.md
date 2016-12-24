@@ -28,3 +28,4 @@ Once you have the dependencies, make sure you build the app and run it using `io
 * Open link in app browser :check:
 * Add settings such as change theme, number of queries, etc.
 * Add gestures for opening links and posts
+* Statusbar color
