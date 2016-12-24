@@ -20,5 +20,11 @@ Once you have the dependencies, make sure you build the app and run it using `io
 
 ## TODO
 
-* Implement view page
+* Implement view page :check:
 * Style view page
+* Add comments :check:
+* Sort comments and add replies to the parent comment(s)
+* Add icons to nav
+* Open link in app browser :check:
+* Add settings such as change theme, number of queries, etc.
+* Add gestures for opening links and posts
