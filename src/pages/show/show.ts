@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { hnService } from '../../services/hn.service';
+import { ViewPage } from '../view/view';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { hnService } from '../../services/hn.service';
 export class Show {
   items: any;
 
-  constructor(private hnService:hnService) {
+  constructor(public navCtrl: NavController, private hnService:hnService) {
 
   }
   ngOnInit() {
@@ -21,6 +22,12 @@ export class Show {
   getPosts(orderBy) {
     this.hnService.getPosts(orderBy).subscribe(response => {
       this.items = response.hits;
+    });
+  }
+
+  viewPost(item) {
+    this.navCtrl.push(ViewPage, {
+      item:item
     });
   }
 }
