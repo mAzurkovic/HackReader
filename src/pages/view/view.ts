@@ -1,13 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, Pipe, PipeTransform } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { hnService } from '../../services/hn.service';
 import { AlertController } from 'ionic-angular';
 import { PopoverController } from 'ionic-angular';
 
+@Pipe({name: 'escapeHtml', pure: false})
+class EscapeHtmlPipe implements PipeTransform {
+   transform(value: any, args: any[] = []) {
+        // Naive detection!
+        if(value.indexOf('<p>') != -1) {
+          return value.replace('<p>', '').replace('<\/p>', '');
+        }
+   }
+}
+
 @Component({
   selector: 'page-view',
   templateUrl: 'view.html',
-  styleUrls: ['/view.scss']
+  styleUrls: ['/view.scss'],
 })
 export class ViewPage {
   item: any;

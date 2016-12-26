@@ -32,7 +32,7 @@ Once you have the dependencies, make sure you build the app and run it using `io
 * User profiles
 * Search capability
 * Add share post to Facebook, etc.
-* Parse and format `html` tags in comments and posts from JSON return
+* Parse and format `html` tags in comments and posts from JSON return :small_blue_diamond:
 * Expandable comments
 * Add refresh option
 * View user from view-page option

@@ -1,8 +1,7 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild,  } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 import { hnService } from '../services/hn.service';
-
 import { Page1 } from '../pages/page1/page1';
 import { Page2 } from '../pages/page2/page2';
 import { Show } from '../pages/show/show';

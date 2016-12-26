@@ -22,7 +22,7 @@
    <span class="time">{{ values.time_ago }} </span> by <span class="user-name"><strong>{{ values.user }}</strong></span>
  </div>
  <br>
-<p>{{ values.content }}</p>
+<p [innerHTML]="values.content"></p>
 
 <h4>Comments</h4>
 
@@ -34,7 +34,7 @@
         <div>
           <span class="time">{{ comment.time_ago }} </span> by <span class="user-name"><strong>{{ comment.user }}</strong></span>:
         </div>
-        {{ comment.content }}
+        <div [innerHTML]="comment.content"></div>
       </ion-card-content>
     </ion-card>
 
@@ -45,7 +45,7 @@
             <div>
               <span class="time">{{ reply.time_ago }} </span> by <span class="user-name"><strong>{{ reply.user }}</strong></span>:
             </div>
-            {{ reply.content }}
+            <div [innerHTML]="reply.content"></div>
           </ion-card-content>
         </ion-card>
         <div class="" *ngFor="let repReply of reply.comments">
@@ -55,7 +55,7 @@
               <div>
                 <span class="time">{{ repReply.time_ago }} </span> by <span class="user-name"><strong>{{ repReply.user }}</strong></span>:
               </div>
-              {{ repReply.content }}
+              <div [innerHTML]="repReply.content"></div>
             </ion-card-content>
           </ion-card>
           <div class="" *ngFor="let rRepReply of reply.comments">
@@ -65,7 +65,7 @@
                 <div>
                   <span class="time">{{ rRepReply.time_ago }} </span> by <span class="user-name"><strong>{{ rRepReply.user }}</strong></span>:
                 </div>
-                {{ rRepReply.content }}
+                <div [innerHTML]="rRepReply.content"></div>
               </ion-card-content>
             </ion-card>
             <div class="" *ngFor="let rrRepReply of reply.comments">
@@ -75,7 +75,7 @@
                   <div>
                     <span class="time">{{ rrRepReply.time_ago }} </span> by <span class="user-name"><strong>{{ rrRepReply.user }}</strong></span>:
                   </div>
-                  {{ rrRepReply.content }}
+                  <div [innerHTML]="rrRepReply.content"></div>
                 </ion-card-content>
               </ion-card>
             </div>
