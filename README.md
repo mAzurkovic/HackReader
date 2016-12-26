@@ -11,7 +11,7 @@ HackReader is a mobile client for reading the HackerNews. It takes data from the
 HackReader is developed using the Ionic framework - if you are unfimilar it allows you to develop mobile applications using web technologies such as Angular JS. Before testing the software make sure you have the following installed:
 
 #### Dependencies
-
+s
 * Ionic
 * Angular JS
 * Node
@@ -37,5 +37,6 @@ Once you have the dependencies, make sure you build the app and run it using `io
 * Add refresh option
 * View user from view-page option
 * Make custom browser?
+* Load more posts to pages
 * Bookmarking posts
 * Open posts in Hacker News :small_blue_diamond:

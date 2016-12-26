@@ -58,7 +58,7 @@
               <div [innerHTML]="repReply.content"></div>
             </ion-card-content>
           </ion-card>
-          <div class="" *ngFor="let rRepReply of reply.comments">
+          <div class="" *ngFor="let rRepReply of repReply.comments">
             <ion-card class="reply3">
               <div class="bar"></div>
               <ion-card-content>
@@ -68,7 +68,7 @@
                 <div [innerHTML]="rRepReply.content"></div>
               </ion-card-content>
             </ion-card>
-            <div class="" *ngFor="let rrRepReply of reply.comments">
+            <div class="" *ngFor="let rrRepReply of rRepReply.comments">
               <ion-card class="reply4">
                 <div class="bar"></div>
                 <ion-card-content>

@@ -5,6 +5,7 @@ import { AlertController } from 'ionic-angular';
 import { PopoverController } from 'ionic-angular';
 import { SocialSharing } from 'ionic-native';
 
+
 @Pipe({name: 'escapeHtml', pure: false})
 class EscapeHtmlPipe implements PipeTransform {
    transform(value: any, args: any[] = []) {
@@ -28,6 +29,7 @@ export class ViewPage {
   constructor(public popoverCtrl: PopoverController, public alertCtrl: AlertController, public navCtrl: NavController, private hnService:hnService, public params:NavParams) {
     this.item = params.get('item');
     this.values = params.get('item');
+
   }
 
   ngOnInit() {
