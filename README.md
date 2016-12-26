@@ -29,3 +29,5 @@ Once you have the dependencies, make sure you build the app and run it using `io
 * Add settings such as change theme, number of queries, etc.
 * Add gestures for opening links and posts
 * Statusbar color
+* User profiles
+* Search capability

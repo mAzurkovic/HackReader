@@ -23,8 +23,12 @@ export class hnService {
     }
   }
 
+  getItem(postID) {
+    return this.http.get('http://node-hnapi.herokuapp.com/item/' + postID).map(res => res.json());
+  }
+
   getComments(postID) {
-    return this.http.get('https://hn.algolia.com/api/v1/search?tags=comment,story_' + postID).map(res => res.json());
+    return this.http.get('http://node-hnapi.herokuapp.com/item/' + postID).map(res => res.json());
   }
 
 }

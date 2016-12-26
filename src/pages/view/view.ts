@@ -9,18 +9,30 @@ import { hnService } from '../../services/hn.service';
 export class ViewPage {
   item: any;
   commentParent: any;
+  values: any;
 
   constructor(public navCtrl: NavController, private hnService:hnService, public params:NavParams) {
     this.item = params.get('item');
+    this.values = params.get('item');
   }
 
   ngOnInit() {
-    this.getComments((this.item.objectID).toString());
+    //this.getComments((this.item.objectID).toString());
+    this.getItemValues((this.item.objectID).toString());
+  }
+
+  // Call service and get additional post info thru node api
+  getItemValues(itemID) {
+    this.hnService.getItem(itemID).subscribe(response => {
+      console.log(response);
+      this.values = response;
+    });
   }
 
   getComments(postID) {
     this.hnService.getComments(postID).subscribe(response => {
-      this.commentParent = response.hits;
+      console.log(response.comments);
+      this.commentParent = response.comments;
     })
   }
 
