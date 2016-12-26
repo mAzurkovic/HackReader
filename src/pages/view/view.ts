@@ -69,12 +69,17 @@ export class ViewPage {
   }
 
   showMore() {
-    let alert = this.alertCtrl.create({
-      title: "About " + this.values.user,
-      subTitle: 'Karma ',
-      buttons: ['OK']
+    this.hnService.getUser((this.values.user).toString()).subscribe(response => {
+      let alert = this.alertCtrl.create({
+        title: 'About User',
+        subTitle: '<ul><li> Name: <span class="user-name">' + response.id + '</span></li>'
+                + '<li> Posts: ' + (response.submitted.length).toString() + '</li>'
+                + '<li> Karma: ' + (response.karma).toString() + '</li></ul>'
+                + '<hr>' + (response.about) ,
+        buttons: ['Done']
+      });
+      alert.present();
     });
-    alert.present();
   }
 
 

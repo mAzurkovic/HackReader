@@ -35,8 +35,9 @@ Once you have the dependencies, make sure you build the app and run it using `io
 * Parse and format `html` tags in comments and posts from JSON return :small_blue_diamond:
 * Expandable comments
 * Add refresh option
-* View user from view-page option
+* View user from view-page option :small_blue_diamond:
 * Make custom browser?
 * Load more posts to pages
 * Bookmarking posts
 * Open posts in Hacker News :small_blue_diamond:
+* View user who commented quick option

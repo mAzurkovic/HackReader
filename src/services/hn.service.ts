@@ -29,6 +29,10 @@ export class hnService {
     return this.http.get('http://node-hnapi.herokuapp.com/item/' + postID).map(res => res.json());
   }
 
+  getUser(userName) {
+    return this.http.get('https://hacker-news.firebaseio.com/v0/user/' + userName + '.json').map(res => res.json());
+  }
+
   getComments(postID) {
     return this.http.get('http://node-hnapi.herokuapp.com/item/' + postID).map(res => res.json());
   }
