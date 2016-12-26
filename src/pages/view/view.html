@@ -27,6 +27,31 @@
 <ion-list>
   <div *ngFor="let comment of values.comments">
     <div>{{ comment.content }}</div>
+
+    <div class="" *ngFor="let reply of comment.comments">
+        <div class="reply1">
+          > {{ reply.content }}
+        </div>
+        <div class="" *ngFor="let repReply of reply.comments">
+          <div class="reply2">
+            >> {{ repReply.content }}
+          </div>
+          <div class="" *ngFor="let rRepReply of reply.comments">
+            <div class="reply3">
+              >>> {{ rRepReply.content }}
+            </div>
+            <div class="" *ngFor="let rrRepReply of reply.comments">
+              <div class="reply4">
+                >>>> {{ rrRepReply.content }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+
+
+
     <hr>
   </div>
 </ion-list>
