@@ -37,3 +37,5 @@ Once you have the dependencies, make sure you build the app and run it using `io
 * Add refresh option
 * View user from view-page option
 * Make custom browser?
+* Bookmarking posts
+* Open posts in Hacker News :small_blue_diamond:

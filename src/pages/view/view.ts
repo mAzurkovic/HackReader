@@ -62,6 +62,10 @@ export class ViewPage {
     window.open((this.item.url).toString(), '_blank');
   }
 
+  openHN() {
+    window.open(('https://news.ycombinator.com/item?id=' + this.values.id), '_system', 'location=yes');
+  }
+
   showMore() {
     let alert = this.alertCtrl.create({
       title: "About " + this.values.user,
@@ -74,7 +78,7 @@ export class ViewPage {
 
   share() {
     // share(message, subject, file, url)
-    SocialSharing.share(this.values.content, 'HackReader Story', null, this.values.url); 
+    SocialSharing.share(this.values.content, 'HackReader Story', null, this.values.url);
   }
 
 }
