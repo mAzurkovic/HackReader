@@ -1,0 +1,87 @@
+.comment {
+  float: right;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  .bar {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    float: left;
+    width: 5px;
+    background-color: #00b9f1;
+  }
+}
+
+.reply1 {
+  float: right;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  width: 90%;
+  .bar {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    float: left;
+    width: 5px;
+    background-color: #fe4365;
+  }
+}
+
+.reply2 {
+  float: right;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  width: 80%;
+  .bar {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    float: left;
+    width: 5px;
+    background-color: #f9c00c;
+  }
+}
+.reply3 {
+  float: right;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  width: 70%;
+  .bar {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    float: left;
+    width: 5px;
+    background-color: #75D701;
+  }
+}
+.reply4 {
+  float: right;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  width: 60%;
+  .bar {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    float: left;
+    width: 5px;
+    background-color: #7200da;
+  }
+}

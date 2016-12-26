@@ -26,24 +26,32 @@
 
 <ion-list>
   <div *ngFor="let comment of values.comments">
-    <div>{{ comment.content }}</div>
+    <ion-card class="comment">
+      <div class="bar"></div>
+      <ion-card-content>{{ comment.content }}</ion-card-content>
+    </ion-card>
 
     <div class="" *ngFor="let reply of comment.comments">
-        <div class="reply1">
-          > {{ reply.content }}
-        </div>
+        <ion-card class="reply1">
+          <div class="bar"></div>
+          <ion-card-content>
+             > {{ reply.content }}</ion-card-content>
+        </ion-card>
         <div class="" *ngFor="let repReply of reply.comments">
-          <div class="reply2">
-            >> {{ repReply.content }}
-          </div>
+          <ion-card class="reply2">
+            <div class="bar"></div>
+            <ion-card-content> >> {{ repReply.content }}</ion-card-content>
+          </ion-card>
           <div class="" *ngFor="let rRepReply of reply.comments">
-            <div class="reply3">
-              >>> {{ rRepReply.content }}
-            </div>
+            <ion-card class="reply3">
+              <div class="bar"></div>
+              <ion-card-content> >>> {{ rRepReply.content }} </ion-card-content>
+            </ion-card>
             <div class="" *ngFor="let rrRepReply of reply.comments">
-              <div class="reply4">
-                >>>> {{ rrRepReply.content }}
-              </div>
+              <ion-card class="reply4">
+                <div class="bar"></div>
+                <ion-card-content>>>>> {{ rrRepReply.content }}</ion-card-content>
+              </ion-card>
             </div>
           </div>
         </div>
@@ -55,5 +63,9 @@
     <hr>
   </div>
 </ion-list>
+
+<ion-fab right bottom>
+   <button ion-fab color="highLight"><ion-icon name="share"></ion-icon></button>
+ </ion-fab>
 
 </ion-content>

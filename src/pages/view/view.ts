@@ -4,7 +4,8 @@ import { hnService } from '../../services/hn.service';
 
 @Component({
   selector: 'page-view',
-  templateUrl: 'view.html'
+  templateUrl: 'view.html',
+  styleUrls: ['/view.scss']
 })
 export class ViewPage {
   item: any;
