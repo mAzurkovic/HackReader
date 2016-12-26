@@ -20,14 +20,19 @@ Once you have the dependencies, make sure you build the app and run it using `io
 
 ## TODO
 
-* Implement view page :check:
+* Implement view page :small_blue_diamond:
 * Style view page
-* Add comments :check:
-* Sort comments and add replies to the parent comment(s)
+* Add comments :small_blue_diamond:
+* Sort comments and add replies to the parent comment(s) :small_blue_diamond:
 * Add icons to nav
-* Open link in app browser :check:
+* Open link in app browser :small_blue_diamond:
 * Add settings such as change theme, number of queries, etc.
 * Add gestures for opening links and posts
-* Statusbar color
+* Statusbar color :small_blue_diamond:
 * User profiles
 * Search capability
+* Add share post to Facebook, etc.
+* Parse and format `html` tags in comments and posts from JSON return
+* Expandable comments
+* Add refresh option
+* View user from view-page option

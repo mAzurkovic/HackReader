@@ -16,12 +16,13 @@ export class Page2 {
 
   }
   ngOnInit() {
-    this.getPosts(1);
+    this.getPosts(4);
   }
 
   getPosts(orderBy) {
     this.hnService.getPosts(orderBy).subscribe(response => {
-      this.items = response.hits;
+      // this.items = response.hits;
+      this.items = response;
     });
   }
 

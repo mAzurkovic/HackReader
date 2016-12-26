@@ -20,7 +20,7 @@ export class Page1 {
   getPosts(orderBy) {
     this.hnService.getPosts(orderBy).subscribe(response => {
       this.items = response.hits;
-    })
+    });
   }
 
   viewPost(item) {
