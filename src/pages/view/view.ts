@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { hnService } from '../../services/hn.service';
 import { AlertController } from 'ionic-angular';
 import { PopoverController } from 'ionic-angular';
+import { SocialSharing } from 'ionic-native';
 
 @Pipe({name: 'escapeHtml', pure: false})
 class EscapeHtmlPipe implements PipeTransform {
@@ -63,11 +64,17 @@ export class ViewPage {
 
   showMore() {
     let alert = this.alertCtrl.create({
-      title: 'New Friend!',
-      subTitle: 'Your friend, Obi wan Kenobi, just accepted your friend request!',
+      title: "About " + this.values.user,
+      subTitle: 'Karma ',
       buttons: ['OK']
     });
     alert.present();
+  }
+
+
+  share() {
+    // share(message, subject, file, url)
+    SocialSharing.share(this.values.content, 'HackReader Story', null, this.values.url); 
   }
 
 }

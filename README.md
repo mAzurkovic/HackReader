@@ -31,8 +31,9 @@ Once you have the dependencies, make sure you build the app and run it using `io
 * Statusbar color :small_blue_diamond:
 * User profiles
 * Search capability
-* Add share post to Facebook, etc.
+* Add share post to Facebook, etc. :small_blue_diamond:
 * Parse and format `html` tags in comments and posts from JSON return :small_blue_diamond:
 * Expandable comments
 * Add refresh option
 * View user from view-page option
+* Make custom browser?
