@@ -13,19 +13,16 @@
 </ion-header>
 
 <ion-content padding>
- <h2 (tap)="openLink()">{{ item.title }}</h2>
- <button *ngIf="item.domain" ion-button class="view-button" (tap)="openLink()">View Link</button>
- <ion-grid>
-  <ion-row>
-    <ion-col width-25>{{ values.user }}</ion-col>
-    <ion-col width-25>{{ item.points }}</ion-col>
-    <ion-col width-25>{{ item.num_comments }}</ion-col>
-    <ion-col width-25>posted {{ values.time_ago }}</ion-col>
-  </ion-row>
-</ion-grid>
-<hr>
-<p>{{ item.url }}</p>
-<p>{{ item.story_text }}</p>
+ <h5 (tap)="openLink()">{{ values.title }}</h5>
+<div *ngIf="values.domain" >
+  <button ion-button class="view-button" (tap)="openLink()">View Link</button>
+  <br><br>
+</div>
+ <div class="post-info">
+   <span class="time">{{ values.time_ago }} </span> by <span class="user-name"><strong>{{ values.user }}</strong></span>
+ </div>
+ <br>
+<p>{{ values.content }}</p>
 
 <h4>Comments</h4>
 
@@ -33,28 +30,53 @@
   <div *ngFor="let comment of values.comments">
     <ion-card class="comment">
       <div class="bar"></div>
-      <ion-card-content>{{ comment.content }}</ion-card-content>
+      <ion-card-content>
+        <div>
+          <span class="time">{{ comment.time_ago }} </span> by <span class="user-name"><strong>{{ comment.user }}</strong></span>:
+        </div>
+        {{ comment.content }}
+      </ion-card-content>
     </ion-card>
 
     <div class="" *ngFor="let reply of comment.comments">
         <ion-card class="reply1">
           <div class="bar"></div>
-          <ion-card-content> {{ reply.content }}</ion-card-content>
+          <ion-card-content>
+            <div>
+              <span class="time">{{ reply.time_ago }} </span> by <span class="user-name"><strong>{{ reply.user }}</strong></span>:
+            </div>
+            {{ reply.content }}
+          </ion-card-content>
         </ion-card>
         <div class="" *ngFor="let repReply of reply.comments">
           <ion-card class="reply2">
             <div class="bar"></div>
-            <ion-card-content> {{ repReply.content }}</ion-card-content>
+            <ion-card-content>
+              <div>
+                <span class="time">{{ repReply.time_ago }} </span> by <span class="user-name"><strong>{{ repReply.user }}</strong></span>:
+              </div>
+              {{ repReply.content }}
+            </ion-card-content>
           </ion-card>
           <div class="" *ngFor="let rRepReply of reply.comments">
             <ion-card class="reply3">
               <div class="bar"></div>
-              <ion-card-content> {{ rRepReply.content }} </ion-card-content>
+              <ion-card-content>
+                <div>
+                  <span class="time">{{ rRepReply.time_ago }} </span> by <span class="user-name"><strong>{{ rRepReply.user }}</strong></span>:
+                </div>
+                {{ rRepReply.content }}
+              </ion-card-content>
             </ion-card>
             <div class="" *ngFor="let rrRepReply of reply.comments">
               <ion-card class="reply4">
                 <div class="bar"></div>
-                <ion-card-content> {{ rrRepReply.content }}</ion-card-content>
+                <ion-card-content>
+                  <div>
+                    <span class="time">{{ rrRepReply.time_ago }} </span> by <span class="user-name"><strong>{{ rrRepReply.user }}</strong></span>:
+                  </div>
+                  {{ rrRepReply.content }}
+                </ion-card-content>
               </ion-card>
             </div>
           </div>

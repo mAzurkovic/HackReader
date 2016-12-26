@@ -5,7 +5,7 @@ import { ViewPage } from '../view/view';
 
 @Component({
   selector: 'page-page1',
-  templateUrl: 'page1.html'
+  templateUrl: 'page1.html',
 })
 export class Page1 {
   items: any;

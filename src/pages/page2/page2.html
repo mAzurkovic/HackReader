@@ -16,12 +16,12 @@
           <ion-row>
             <ion-col width-20>
               <ion-card-title>
-                {{ item.points }}
+                  <strong>{{ item.points }}</strong>
               </ion-card-title>
             </ion-col>
             <ion-col width-80>
               <h2>{{ item.title }}</h2>
-              <p>{{ item.user }}   |  <ion-icon name="chatbubbles"></ion-icon> {{ item.comments_count }}  |  {{ item.time_ago }}</p>
+              <p><span class="user-name">{{ item.user }}</span>   |  <ion-icon name="chatbubbles"></ion-icon> {{ item.comments_count }}</p>
             </ion-col>
           </ion-row>
         </ion-grid>

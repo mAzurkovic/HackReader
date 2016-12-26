@@ -21,12 +21,13 @@ export class ViewPage {
 
   ngOnInit() {
     //this.getComments((this.item.objectID).toString());
-    if (this.item.id) {
+    if (this.item.objectID) {
       // Check to see if using the Unofficia node HN API
-      this.getItemValues((this.item.id).toString());
+      this.getItemValues(this.item.objectID);
     } else {
       // Else using the search API
-      this.getItemValues((this.item.objectID).toString());
+      this.getItemValues((this.item.id).toString());
+
     }
 
   }

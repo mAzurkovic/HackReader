@@ -15,7 +15,7 @@ import { Ask } from '../pages/ask/ask';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = Page1;
+  rootPage: any = Page2;
 
   pages: Array<{title: string, component: any, icon: string}>;
 
@@ -29,7 +29,7 @@ export class MyApp {
       { title: 'Show', component: Show , icon: 'flame'},
       { title: 'Ask', component: Ask, icon: 'flame' }
     ];
-    
+
   }
 
   initializeApp() {
