@@ -19,7 +19,8 @@
   <br><br>
 </div>
  <div class="post-info">
-   <span class="time">{{ values.time_ago }} </span> by <span class="user-name"><strong>{{ values.user }}</strong></span>
+   <span class="time">{{ values.time_ago }} </span> by <span class="user-name" (tap)="showUser(values.user)"><strong>{{ values.user }}</strong></span>
+   <span class="show-points"><strong>{{ values.points }}</strong> points</span>
  </div>
  <br>
 <p [innerHTML]="values.content"></p>
@@ -32,7 +33,8 @@
       <div class="bar"></div>
       <ion-card-content>
         <div>
-          <span class="time">{{ comment.time_ago }} </span> by <span class="user-name"><strong>{{ comment.user }}</strong></span>:
+          <span class="time">{{ comment.time_ago }} </span> by <span class="user-name" (tap)="showUser(comment.user)"><strong>{{ comment.user }}</strong></span>:
+          <span class="more-commenter"><ion-icon name="more" (tap)="showActionSheet(comment.user, comment.id)"></ion-icon></span>
         </div>
         <div [innerHTML]="comment.content"></div>
       </ion-card-content>
@@ -43,7 +45,8 @@
           <div class="bar"></div>
           <ion-card-content>
             <div>
-              <span class="time">{{ reply.time_ago }} </span> by <span class="user-name"><strong>{{ reply.user }}</strong></span>:
+              <span class="time">{{ reply.time_ago }} </span> by <span class="user-name" (tap)="showUser(reply.user)"><strong>{{ reply.user }}</strong></span>:
+              <span class="more-commenter"><ion-icon name="more" (tap)="showActionSheet(reply.user, reply.id)"></ion-icon></span>
             </div>
             <div [innerHTML]="reply.content"></div>
           </ion-card-content>
@@ -53,7 +56,8 @@
             <div class="bar"></div>
             <ion-card-content>
               <div>
-                <span class="time">{{ repReply.time_ago }} </span> by <span class="user-name"><strong>{{ repReply.user }}</strong></span>:
+                <span class="time">{{ repReply.time_ago }} </span> by <span class="user-name" (tap)="showUser(repReply.user)"><strong>{{ repReply.user }}</strong></span>:
+                <span class="more-commenter"><ion-icon name="more" (tap)="showActionSheet(repReply.user, repReply.id)"></ion-icon></span>
               </div>
               <div [innerHTML]="repReply.content"></div>
             </ion-card-content>
@@ -63,7 +67,8 @@
               <div class="bar"></div>
               <ion-card-content>
                 <div>
-                  <span class="time">{{ rRepReply.time_ago }} </span> by <span class="user-name"><strong>{{ rRepReply.user }}</strong></span>:
+                  <span class="time">{{ rRepReply.time_ago }} </span> by <span class="user-name" (tap)="showUser(rRepReply.user)"><strong>{{ rRepReply.user }}</strong></span>:
+                  <span class="more-commenter"><ion-icon name="more" (tap)="showActionSheet(rRepReply.user, rRepReply.id)"></ion-icon></span>
                 </div>
                 <div [innerHTML]="rRepReply.content"></div>
               </ion-card-content>
@@ -73,7 +78,8 @@
                 <div class="bar"></div>
                 <ion-card-content>
                   <div>
-                    <span class="time">{{ rrRepReply.time_ago }} </span> by <span class="user-name"><strong>{{ rrRepReply.user }}</strong></span>:
+                    <span class="time">{{ rrRepReply.time_ago }} </span> by <span class="user-name" (tap)="showUser(rrRepReply.user)"><strong>{{ rrRepReply.user }}</strong></span>:
+                    <span class="more-commenter"><ion-icon name="more" (tap)="showActionSheet(rrRepReply.user, rrRepReply.id)"></ion-icon></span>
                   </div>
                   <div [innerHTML]="rrRepReply.content"></div>
                 </ion-card-content>
@@ -87,7 +93,7 @@
 </ion-list>
 
  <ion-fab right bottom>
-     <button ion-fab color="highLight"><ion-icon name="more"></ion-icon></button>
+     <button ion-fab color="highLight"><ion-icon name="arrow-dropup"></ion-icon></button>
      <ion-fab-list side="top">
        <button ion-fab (tap)="showMore()"><ion-icon name="person"></ion-icon></button>
        <button ion-fab (tap)="share()"><ion-icon name="share"></ion-icon></button>

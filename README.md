@@ -21,7 +21,7 @@ Once you have the dependencies, make sure you build the app and run it using `io
 ## TODO
 
 * Implement view page :small_blue_diamond:
-* Style view page
+* Style view page :small_blue_diamond:
 * Add comments :small_blue_diamond:
 * Sort comments and add replies to the parent comment(s) :small_blue_diamond:
 * Add icons to nav
