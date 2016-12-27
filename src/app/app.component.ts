@@ -6,6 +6,7 @@ import { Page1 } from '../pages/page1/page1';
 import { Page2 } from '../pages/page2/page2';
 import { Show } from '../pages/show/show';
 import { Ask } from '../pages/ask/ask';
+import { Search } from '../pages/search/search';
 
 @Component({
   templateUrl: 'app.html',
@@ -26,7 +27,8 @@ export class MyApp {
       { title: "New", component: Page1, icon: 'flame' },
       { title: 'Front Page', component: Page2, icon: 'flame' },
       { title: 'Show', component: Show , icon: 'flame'},
-      { title: 'Ask', component: Ask, icon: 'flame' }
+      { title: 'Ask', component: Ask, icon: 'flame' },
+      { title: 'Search', component: Search, icon: 'flame' }
     ];
 
   }

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Search</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-searchbar (ionInput)="query($event)"></ion-searchbar>
+
+    <div class="" *ngIf="!isSearched">
+      <br>
+      <h4 style="text-align: center;">Search the Hacker News...</h4>
+    </div>
+
+    <ion-list *ngIf="isSearched">
+      <ion-card *ngFor="let item of items">
+        <ion-card-content (tap)="viewPost(item)" (swipe)="viewLink(item)" style="display: table;">
+
+          <div class="" style="display: table-cell; vertical-align: middle; padding-right: 10px;">
+            <h1><strong>{{ item.points }}</strong></h1>
+            <p style="text-align: center;">pts</p>
+          </div>
+          <div class="" style="">
+            <h3 style="font-size: 125%;">{{ item.title }}</h3>
+            <p>
+              <span class="user-name">{{ item.author }}</span> |
+              <ion-icon name="chatbubbles"></ion-icon> {{ item.num_comments }}
+            </p>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+
+</ion-content>

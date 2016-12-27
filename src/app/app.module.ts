@@ -6,6 +6,7 @@ import { Page2 } from '../pages/page2/page2';
 import { Show } from '../pages/show/show';
 import { Ask } from '../pages/ask/ask';
 import { ViewPage } from '../pages/view/view';
+import { Search } from '../pages/search/search';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ViewPage } from '../pages/view/view';
     Page2,
     Show,
     Ask,
-    ViewPage
+    ViewPage,
+    Search
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -26,7 +28,8 @@ import { ViewPage } from '../pages/view/view';
     Page2,
     Show,
     Ask,
-    ViewPage
+    ViewPage,
+    Search
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

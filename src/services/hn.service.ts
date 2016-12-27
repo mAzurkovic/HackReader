@@ -47,4 +47,10 @@ export class hnService {
     SocialSharing.share(json.text, ('Comment by ' + json.by), null, null);
   }
 
+  // Searches API for STORIES ONLY
+  query(query) {
+    console.log('http://hn.algolia.com/api/v1/search?tags=story&query=' + query);
+    return this.http.get('http://hn.algolia.com/api/v1/search?tags=story&query=' + query).map(res => res.json());
+  }
+
 }

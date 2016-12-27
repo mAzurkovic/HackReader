@@ -30,7 +30,7 @@ Once you have the dependencies, make sure you build the app and run it using `io
 * Add gestures for opening links and posts :small_blue_diamond:
 * Statusbar color :small_blue_diamond:
 * User profiles
-* Search capability
+* Search capability :small_blue_diamond:
 * Add share post to Facebook, etc. :small_blue_diamond:
 * Parse and format `html` tags in comments and posts from JSON return :small_blue_diamond:
 * Expandable comments
