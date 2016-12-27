@@ -11,7 +11,7 @@
 
   <ion-list>
     <ion-card *ngFor="let item of items">
-      <ion-card-content (tap)="viewPost(item)">
+      <ion-card-content (tap)="viewPost(item)" (swipe)="viewLink(item)">
         <ion-grid>
           <ion-row>
             <ion-col width-20>

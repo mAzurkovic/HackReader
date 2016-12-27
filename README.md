@@ -27,7 +27,7 @@ Once you have the dependencies, make sure you build the app and run it using `io
 * Add icons to nav
 * Open link in app browser :small_blue_diamond:
 * Add settings such as change theme, number of queries, etc.
-* Add gestures for opening links and posts
+* Add gestures for opening links and posts :small_blue_diamond:
 * Statusbar color :small_blue_diamond:
 * User profiles
 * Search capability

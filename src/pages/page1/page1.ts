@@ -29,4 +29,11 @@ export class Page1 {
     });
   }
 
+  viewLink(object) {
+    if (object.url) {
+      console.log(object.url);
+      window.open(object.url, '_blank');
+    }
+  }
+
 }

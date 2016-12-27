@@ -26,6 +26,13 @@ export class Page2 {
     });
   }
 
+  viewLink(object) {
+    if (object.url) {
+      console.log(object.url);
+      window.open(object.url, '_blank');
+    }
+  }
+
   viewPost(item) {
     this.navCtrl.push(ViewPage, {
       item:item

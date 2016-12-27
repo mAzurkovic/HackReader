@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import { SocialSharing } from 'ionic-native';
 import 'rxjs/Rx';
 
 @Injectable()
@@ -39,6 +40,11 @@ export class hnService {
 
   getComment(commentID) {
     return this.http.get('https://hacker-news.firebaseio.com/v0/item/' + commentID + '.json').map(res => res.json());
+  }
+
+  share(id) {
+    var json = this.http.get('https://hacker-news.firebaseio.com/v0/item/' + id + '.json').map(res => res.json());
+    SocialSharing.share(json.text, ('Comment by ' + json.by), null, null);
   }
 
 }

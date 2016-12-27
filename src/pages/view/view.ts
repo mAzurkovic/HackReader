@@ -125,9 +125,10 @@ export class ViewPage {
           },{
             text: 'Share comment',
             handler: () => {
-              this.hnService.getComment((commentID).toString()).subscribe(response => {
+              this.hnService.share(commentID.toString());
+              /*this.hnService.getComment((commentID).toString()).subscribe(response => {
                 SocialSharing.share(response.text, ('Comment by ' + response.by), null, null);
-              });
+              });*/
             }
           },{
             text: 'Cancel',
