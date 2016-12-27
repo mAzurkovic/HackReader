@@ -1,14 +1,36 @@
 <ion-menu [content]="content">
   <ion-header>
     <ion-toolbar color="primary">
+      <br><br><br><br>
       <ion-title>HackReader</ion-title>
+      <br>
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
-    <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+    <ion-list no-lines>
+      <!--<button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
+      </button> -->
+
+      <button menuClose ion-item (click)="openPage(pages[1])">
+        <ion-icon name="trending-up"> Front Page</ion-icon>
+      </button>
+      <button menuClose ion-item (click)="openPage(pages[0])">
+        <ion-icon name="alarm"> New</ion-icon>
+      </button>
+      <button menuClose ion-item (click)="openPage(pages[2])">
+        <ion-icon name="eye"> Show</ion-icon>
+      </button>
+      <button menuClose ion-item (click)="openPage(pages[3])">
+        <ion-icon name="megaphone"> Ask</ion-icon>
+      </button>
+      <hr>
+      <button menuClose ion-item (click)="openPage(pages[2])">
+        <ion-icon name="settings"> Settings</ion-icon>
+      </button>
+      <button menuClose ion-item (click)="openPage(pages[2])">
+        <ion-icon name="information-circle"> About</ion-icon>
       </button>
     </ion-list>
   </ion-content>

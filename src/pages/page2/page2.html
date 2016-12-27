@@ -11,12 +11,13 @@
 
   <ion-list>
     <ion-card *ngFor="let item of items">
-      <ion-card-content (tap)="viewPost(item)" (swipe)="viewLink(item)">
-        <ion-grid>
+      <ion-card-content (tap)="viewPost(item)" (swipe)="viewLink(item)" style="display: table;">
+        <!--<ion-grid>
           <ion-row>
             <ion-col width-20>
-              <ion-card-title>
-                  <strong>{{ item.points }}</strong>
+            <ion-card-title>
+                  <strong style="">{{ item.points }}</strong>
+                  <p>pts</p>
               </ion-card-title>
             </ion-col>
             <ion-col width-80>
@@ -24,7 +25,18 @@
               <p><span class="user-name">{{ item.user }}</span>   |  <ion-icon name="chatbubbles"></ion-icon> {{ item.comments_count }}</p>
             </ion-col>
           </ion-row>
-        </ion-grid>
+        </ion-grid>-->
+
+        <div class="" style="display: table-cell; vertical-align: middle; padding-right: 10px;">
+          <h1><strong>{{ item.points }}</strong></h1>
+          <p style="text-align: center;">pts</p>
+        </div>
+        <div class="" style="">
+          <h3 style="font-size: 125%;">{{ item.title }}</h3>
+          <p>
+            <span class="user-name">{{ item.user }}</span>   |  <ion-icon name="chatbubbles"></ion-icon> {{ item.comments_count }}
+          </p>
+        </div>
       </ion-card-content>
     </ion-card>
   </ion-list>
