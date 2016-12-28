@@ -2,15 +2,18 @@ import { Component, ViewChild,  } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 import { hnService } from '../services/hn.service';
+import { bookmarkService } from '../services/bookmark.service';
 import { Page1 } from '../pages/page1/page1';
 import { Page2 } from '../pages/page2/page2';
 import { Show } from '../pages/show/show';
 import { Ask } from '../pages/ask/ask';
 import { Search } from '../pages/search/search';
+import { Bookmarks } from '../pages/bookmarks/bookmarks';
+
 
 @Component({
   templateUrl: 'app.html',
-  providers: [hnService]
+  providers: [hnService, bookmarkService]
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
@@ -28,7 +31,8 @@ export class MyApp {
       { title: 'Front Page', component: Page2, icon: 'flame' },
       { title: 'Show', component: Show , icon: 'flame'},
       { title: 'Ask', component: Ask, icon: 'flame' },
-      { title: 'Search', component: Search, icon: 'flame' }
+      { title: 'Search', component: Search, icon: 'flame' },
+      { title: 'Bookmarks', component: Bookmarks, icon: 'flame' }
     ];
 
   }

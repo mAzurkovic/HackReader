@@ -1,6 +1,7 @@
 import { Component, Pipe, PipeTransform } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { hnService } from '../../services/hn.service';
+import { bookmarkService } from '../../services/bookmark.service';
 import { AlertController } from 'ionic-angular';
 import { PopoverController } from 'ionic-angular';
 import { SocialSharing } from 'ionic-native';
@@ -27,7 +28,7 @@ export class ViewPage {
   commentParent: any;
   values: any;
 
-  constructor(public actionSheetCtrl: ActionSheetController, public popoverCtrl: PopoverController, public alertCtrl: AlertController, public navCtrl: NavController, private hnService:hnService, public params:NavParams) {
+  constructor(public actionSheetCtrl: ActionSheetController, public popoverCtrl: PopoverController, public alertCtrl: AlertController, public navCtrl: NavController, private hnService:hnService, private bookmarkService:bookmarkService, public params:NavParams) {
     this.item = params.get('item');
     this.values = params.get('item');
 
@@ -43,7 +44,6 @@ export class ViewPage {
       this.getItemValues((this.item.id).toString());
 
     }
-
   }
 
   // Call service and get additional post info thru node api
@@ -140,6 +140,10 @@ export class ViewPage {
         ]
       });
       actionSheet.present();
+    }
+
+    bookmark(post) {
+      this.bookmarkService.savePost(post);
     }
 
 }
