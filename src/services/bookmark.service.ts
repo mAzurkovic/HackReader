@@ -31,4 +31,8 @@ export class bookmarkService {
     return this.savedPostsJSON;
   }
 
+  clearSavedPosts() {
+    this.storage.clear();
+  }
+
 }

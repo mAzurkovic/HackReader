@@ -6,16 +6,17 @@ import { AlertController } from 'ionic-angular';
 import { PopoverController } from 'ionic-angular';
 import { SocialSharing } from 'ionic-native';
 import { ActionSheetController } from 'ionic-angular';
+import { ToastController } from 'ionic-angular';
 
 
-@Pipe({name: 'escapeHtml', pure: false})
+@Pipe({ name: 'escapeHtml', pure: false })
 class EscapeHtmlPipe implements PipeTransform {
-   transform(value: any, args: any[] = []) {
-        // Naive detection!
-        if(value.indexOf('<p>') != -1) {
-          return value.replace('<p>', '').replace('<\/p>', '');
-        }
-   }
+  transform(value: any, args: any[] = []) {
+    // Naive detection!
+    if (value.indexOf('<p>') != -1) {
+      return value.replace('<p>', '').replace('<\/p>', '');
+    }
+  }
 }
 
 @Component({
@@ -28,7 +29,7 @@ export class ViewPage {
   commentParent: any;
   values: any;
 
-  constructor(public actionSheetCtrl: ActionSheetController, public popoverCtrl: PopoverController, public alertCtrl: AlertController, public navCtrl: NavController, private hnService:hnService, private bookmarkService:bookmarkService, public params:NavParams) {
+  constructor(public toastCtrl: ToastController, public actionSheetCtrl: ActionSheetController, public popoverCtrl: PopoverController, public alertCtrl: AlertController, public navCtrl: NavController, private hnService: hnService, private bookmarkService: bookmarkService, public params: NavParams) {
     this.item = params.get('item');
     this.values = params.get('item');
 
@@ -74,9 +75,9 @@ export class ViewPage {
       let alert = this.alertCtrl.create({
         title: 'About User',
         subTitle: '<ul><li> Name: <span class="user-name">' + response.id + '</span></li>'
-                + '<li> Posts: ' + (response.submitted.length).toString() + '</li>'
-                + '<li> Karma: ' + (response.karma).toString() + '</li></ul>'
-                + '<hr>' + (response.about) ,
+        + '<li> Posts: ' + (response.submitted.length).toString() + '</li>'
+        + '<li> Karma: ' + (response.karma).toString() + '</li></ul>'
+        + '<hr>' + (response.about),
         buttons: ['Done']
       });
       alert.present();
@@ -89,9 +90,9 @@ export class ViewPage {
       let alert = this.alertCtrl.create({
         title: 'About User',
         subTitle: '<ul><li> Name: <span class="user-name">' + response.id + '</span></li>'
-                + '<li> Posts: ' + (response.submitted.length).toString() + '</li>'
-                + '<li> Karma: ' + (response.karma).toString() + '</li></ul>'
-                + '<hr>' + (response.about) ,
+        + '<li> Posts: ' + (response.submitted.length).toString() + '</li>'
+        + '<li> Karma: ' + (response.karma).toString() + '</li></ul>'
+        + '<hr>' + (response.about),
         buttons: ['Done']
       });
       alert.present();
@@ -104,46 +105,52 @@ export class ViewPage {
   }
 
   showActionSheet(userName, commentID) {
-      let actionSheet = this.actionSheetCtrl.create({
-        title: 'About Comment',
-        buttons: [
-          {
-            text: 'Commenter info',
-            handler: () => {
-              this.hnService.getUser((userName).toString()).subscribe(response => {
-                let alert = this.alertCtrl.create({
-                  title: 'About User',
-                  subTitle: '<ul><li> Name: <span class="user-name">' + response.id + '</span></li>'
-                          + '<li> Posts: ' + (response.submitted.length).toString() + '</li>'
-                          + '<li> Karma: ' + (response.karma).toString() + '</li></ul>'
-                          + '<hr>' + (response.about) ,
-                  buttons: ['Done']
-                });
-                alert.present();
+    let actionSheet = this.actionSheetCtrl.create({
+      title: 'About Comment',
+      buttons: [
+        {
+          text: 'Commenter info',
+          handler: () => {
+            this.hnService.getUser((userName).toString()).subscribe(response => {
+              let alert = this.alertCtrl.create({
+                title: 'About User',
+                subTitle: '<ul><li> Name: <span class="user-name">' + response.id + '</span></li>'
+                + '<li> Posts: ' + (response.submitted.length).toString() + '</li>'
+                + '<li> Karma: ' + (response.karma).toString() + '</li></ul>'
+                + '<hr>' + (response.about),
+                buttons: ['Done']
               });
-            }
-          },{
-            text: 'Share comment',
-            handler: () => {
-              this.hnService.share(commentID.toString());
-              /*this.hnService.getComment((commentID).toString()).subscribe(response => {
-                SocialSharing.share(response.text, ('Comment by ' + response.by), null, null);
-              });*/
-            }
-          },{
-            text: 'Cancel',
-            role: 'cancel',
-            handler: () => {
-              console.log('Cancel clicked');
-            }
+              alert.present();
+            });
           }
-        ]
-      });
-      actionSheet.present();
-    }
+        }, {
+          text: 'Share comment',
+          handler: () => {
+            this.hnService.share(commentID.toString());
+            /*this.hnService.getComment((commentID).toString()).subscribe(response => {
+              SocialSharing.share(response.text, ('Comment by ' + response.by), null, null);
+            });*/
+          }
+        }, {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        }
+      ]
+    });
+    actionSheet.present();
+  }
 
-    bookmark(post) {
-      this.bookmarkService.savePost(post);
-    }
+  bookmark(post) {
+    const toast = this.toastCtrl.create({
+      message: 'Post successfully bookmarked!',
+      showCloseButton: true,
+      closeButtonText: 'Ok'
+    });
+    toast.present();
+    this.bookmarkService.savePost(post);
+  }
 
 }
