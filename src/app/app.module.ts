@@ -9,6 +9,7 @@ import { Ask } from '../pages/ask/ask';
 import { ViewPage } from '../pages/view/view';
 import { Search } from '../pages/search/search';
 import { Bookmarks } from '../pages/bookmarks/bookmarks';
+import { About } from '../pages/about/about';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { Bookmarks } from '../pages/bookmarks/bookmarks';
     Ask,
     ViewPage,
     Search,
-    Bookmarks
+    Bookmarks,
+    About
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -34,7 +36,8 @@ import { Bookmarks } from '../pages/bookmarks/bookmarks';
     Ask,
     ViewPage,
     Search,
-    Bookmarks
+    Bookmarks,
+    About
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Storage]
 })

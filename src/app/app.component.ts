@@ -9,6 +9,8 @@ import { Show } from '../pages/show/show';
 import { Ask } from '../pages/ask/ask';
 import { Search } from '../pages/search/search';
 import { Bookmarks } from '../pages/bookmarks/bookmarks';
+import { About } from '../pages/about/about';
+
 
 
 @Component({
@@ -32,7 +34,8 @@ export class MyApp {
       { title: 'Show', component: Show , icon: 'flame'},
       { title: 'Ask', component: Ask, icon: 'flame' },
       { title: 'Search', component: Search, icon: 'flame' },
-      { title: 'Bookmarks', component: Bookmarks, icon: 'flame' }
+      { title: 'Bookmarks', component: Bookmarks, icon: 'flame' },
+      { title: 'About', component: About, icon: 'flame' },
     ];
 
   }
