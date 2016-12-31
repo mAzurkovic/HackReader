@@ -18,6 +18,12 @@ export class Show {
     this.getPosts(2);
   }
 
+  refresh() {
+    this.getPosts(2);
+    console.log("@refresh");
+  }
+
+
   getPosts(orderBy) {
     this.hnService.getPosts(orderBy).subscribe(response => {
       this.items = response.hits;

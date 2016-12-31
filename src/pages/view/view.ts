@@ -47,6 +47,19 @@ export class ViewPage {
     }
   }
 
+  refresh() {
+    if (this.item.objectID) {
+      // Check to see if using the Unofficia node HN API
+      this.getItemValues(this.item.objectID);
+    } else {
+      // Else using the search API
+      this.getItemValues((this.item.id).toString());
+
+    }
+    console.log("@refresh");
+  }
+
+
   // Call service and get additional post info thru node api
   getItemValues(itemID) {
     this.hnService.getItem(itemID).subscribe(response => {

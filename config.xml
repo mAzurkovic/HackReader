@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.hackernewsreader296388" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.ionicframework.hackernewsreader296388" version="1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>HackReader</name>
   <description>A mobile client for reading the Hacker News</description>
-  <author email="mattias@zurkovic.com" href="http://ionicframework.com/">Mattias Zurkovic</author>
+  <author email="mattias@zurkovic.com" href="http://ionicframework.com/">Mattias Zurkovi&#263;</author>
   <content src="index.html"/>
   <access origin="*"/>
   <allow-intent href="http://*/*"/>
