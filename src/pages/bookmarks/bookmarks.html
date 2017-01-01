@@ -17,7 +17,7 @@
       <ion-card-content (swipe)="viewLink(item)" style="display: table; height: 100%; width: 100%;">
 
         <div class="" style="width:100%;">
-        <span (tap)="this.bookmarkService.savePostByJSON(item)"><ion-icon name="trash" style="float: right; padding-left:10px;"></ion-icon></span>
+        <span (tap)="removeBM(item)"><ion-icon name="trash" style="float: right; padding-left:10px;"></ion-icon></span>
           <h3 style="font-size: 125%;" (tap)="viewPost(item)"> {{ item.title }}</h3>
         </div>
         <hr>
