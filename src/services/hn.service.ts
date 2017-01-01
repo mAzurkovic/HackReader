@@ -53,4 +53,19 @@ export class hnService {
     return this.http.get('http://hn.algolia.com/api/v1/search?tags=story&query=' + query).map(res => res.json());
   }
 
+  extractDomain(url) {
+      var domain;
+      //find & remove protocol (http, ftp, etc.) and get domain
+      if (url.indexOf("://") > -1) {
+          domain = url.split('/')[2];
+      }
+      else {
+          domain = url.split('/')[0];
+      }
+      //find & remove port number
+      domain = domain.split(':')[0];
+      console.log(domain);
+      return domain;
+  }
+
 }

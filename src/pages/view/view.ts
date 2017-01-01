@@ -47,16 +47,12 @@ export class ViewPage {
     }
   }
 
-  refresh() {
-    if (this.item.objectID) {
-      // Check to see if using the Unofficia node HN API
-      this.getItemValues(this.item.objectID);
-    } else {
-      // Else using the search API
-      this.getItemValues((this.item.id).toString());
-
-    }
+  refresh(refresher) {
+    this.ngOnInit();
     console.log("@refresh");
+    setTimeout(() => {
+      refresher.complete();
+    }, 2000);
   }
 
 
@@ -157,12 +153,6 @@ export class ViewPage {
   }
 
   bookmark(post) {
-    const toast = this.toastCtrl.create({
-      message: 'Post successfully bookmarked!',
-      showCloseButton: true,
-      closeButtonText: 'Ok'
-    });
-    toast.present();
     this.bookmarkService.savePost(post);
   }
 

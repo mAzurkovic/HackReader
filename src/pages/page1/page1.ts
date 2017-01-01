@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { hnService } from '../../services/hn.service';
+import { bookmarkService } from '../../services/bookmark.service';
 import { ViewPage } from '../view/view';
 
 @Component({
@@ -9,7 +10,7 @@ import { ViewPage } from '../view/view';
 })
 export class Page1 {
   items: any;
-  constructor(public navCtrl: NavController, private hnService:hnService) {
+  constructor(public navCtrl: NavController, private hnService:hnService, private bookmarkService:bookmarkService) {
 
   }
 
@@ -17,10 +18,14 @@ export class Page1 {
     this.getPosts('new');
   }
 
-  refresh() {
-    this.getPosts('new');
+  refresh(refresher) {
+    this.ngOnInit();
     console.log("@refresh");
+    setTimeout(() => {
+      refresher.complete();
+    }, 2000);
   }
+
 
   getPosts(orderBy) {
     this.hnService.getPosts(orderBy).subscribe(response => {

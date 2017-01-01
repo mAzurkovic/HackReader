@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { hnService } from '../../services/hn.service';
+import { bookmarkService } from '../../services/bookmark.service';
 import { ViewPage } from '../view/view';
 
 @Component({
@@ -11,16 +12,19 @@ import { ViewPage } from '../view/view';
 export class Show {
   items: any;
 
-  constructor(public navCtrl: NavController, private hnService:hnService) {
+  constructor(public navCtrl: NavController, private hnService:hnService, private bookmarkService:bookmarkService) {
 
   }
   ngOnInit() {
     this.getPosts(2);
   }
 
-  refresh() {
-    this.getPosts(2);
+  refresh(refresher) {
+    this.ngOnInit();
     console.log("@refresh");
+    setTimeout(() => {
+      refresher.complete();
+    }, 2000);
   }
 
 

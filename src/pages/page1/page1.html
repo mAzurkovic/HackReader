@@ -5,29 +5,30 @@
     </button>
     <ion-title>New</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only (tap)="refresh()">
-        <ion-icon name="refresh"></ion-icon>
-      </button>
+
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+  <ion-refresher (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <ion-list>
     <ion-card *ngFor="let item of items">
-      <ion-card-content (tap)="viewPost(item)" (swipe)="viewLink(item)" style="display: table;">
+      <ion-card-content (swipe)="viewLink(item)" style="display: table; height: 100%; width: 100%;">
 
-        <div class="" style="display: table-cell; vertical-align: middle; padding-right: 10px;">
-          <h1><strong>{{ item.points }}</strong></h1>
-          <p style="text-align: center;">pts</p>
+        <div class="" style="width:100%;">
+        <span (tap)="this.bookmarkService.savePostByJSON(item)"><ion-icon name="bookmark" style="float: right; padding-left:10px;"></ion-icon></span>
+          <h3 style="font-size: 125%;" (tap)="viewPost(item)"> {{ item.title }}</h3>
         </div>
-        <div class="" style="">
-          <h3 style="font-size: 125%;">{{ item.title }}</h3>
-          <p>
-            <span class="user-name">{{ item.author }}</span>   |  <ion-icon name="chatbubbles"></ion-icon> {{ item.num_comments }}
-          </p>
+        <hr>
+        <div class="" (tap)="viewPost(item)">
+          <span><strong>{{ item.points }}</strong> Points </span>
+          &bull;<span> <strong>{{ item.num_comments }} </strong>Comments </span>
+          &bull;<span class="user-name"> {{ item.author }}</span>
         </div>
+
       </ion-card-content>
     </ion-card>
   </ion-list>

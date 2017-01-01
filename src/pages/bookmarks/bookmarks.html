@@ -13,18 +13,22 @@
 
   <ion-list>
     <ion-card *ngFor="let item of items">
-      <ion-card-content (tap)="viewPost(item)" (swipe)="viewLink(item)" style="display: table;">
 
-        <div class="" style="display: table-cell; vertical-align: middle; padding-right: 10px;">
-          <h1><strong>{{ item.points }}</strong></h1>
-          <p style="text-align: center;">pts</p>
+      <ion-card-content (swipe)="viewLink(item)" style="display: table; height: 100%; width: 100%;">
+
+        <div class="" style="width:100%;">
+        <span (tap)="this.bookmarkService.savePostByJSON(item)"><ion-icon name="trash" style="float: right; padding-left:10px;"></ion-icon></span>
+          <h3 style="font-size: 125%;" (tap)="viewPost(item)"> {{ item.title }}</h3>
         </div>
-        <div class="" style="width: 100%;">
-          <h3 style="font-size: 125%;">{{ item.title }}</h3>
-          <p>
-            <span class="user-name">{{ item.user }}</span>   |  <ion-icon name="chatbubbles"></ion-icon> {{ item.comments_count }}
-          </p>
+        <hr>
+        <div class="" (tap)="viewPost(item)">
+          <span><strong>{{ item.points }}</strong> Points </span>
+          &bull;<span *ngIf="item.num_comments"> <strong>{{ item.num_comments }} </strong>Comments </span>
+                <span *ngIf="item.comments_count"> <strong>{{ item.comments_count }} </strong>Comments </span>
+          &bull;<span *ngIf="item.author" class="user-name"> {{ item.author }}</span>
+                <span *ngIf="item.user" class="user-name"> {{ item.user }}</span>
         </div>
+
       </ion-card-content>
 
     </ion-card>
