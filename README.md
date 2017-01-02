@@ -18,6 +18,11 @@ HackReader is developed using the Ionic framework - if you are unfimilar it allo
 
 Once you have the dependencies, make sure you build the app and run it using `ionic serve`. This will open up a test browser window so scale it down to mobile dimensions. When you want to export the code as an `.apk` file for your device run `ionic build`.
 
+## APIs Used:
+* [HN Angolia Search API]() - Used for the New, Ask and Show pages. Aswell as the bookmark pages for some posts.
+* [FireBase Official HN API] - Used for getting post/user/comment IDs
+* [Unofficial HN API]() - Used for the view pages to get all comments
+
 ## TODO
 
 * Implement view page :small_blue_diamond:
