@@ -20,7 +20,7 @@ Once you have the dependencies, make sure you build the app and run it using `io
 
 ## APIs Used:
 * [HN Angolia Search API]() - Used for the New, Ask and Show pages. Aswell as the bookmark pages for some posts.
-* [FireBase Official HN API] - Used for getting post/user/comment IDs
+* [FireBase Official HN API]() - Used for getting post/user/comment IDs
 * [Unofficial HN API]() - Used for the view pages to get all comments
 
 ## TODO
