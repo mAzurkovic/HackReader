@@ -2,6 +2,8 @@
 
 > The official code base for the HackReader application
 
+Version 1.1 - View in Play Store
+
 ## About
 
 HackReader is a mobile client for reading the HackerNews. It takes data from the legacy HackerNews API, for future updates the goal is to migrate to the new Firebase HN API.
