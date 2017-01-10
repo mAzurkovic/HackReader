@@ -2,7 +2,7 @@
 
 > The official code base for the HackReader application
 
-Version 1.1 - (View in the Play Store)[https://play.google.com/store/apps/details?id=com.ionicframework.hackernewsreader296388]
+Version 1.1 - [View in the Play Store](https://play.google.com/store/apps/details?id=com.ionicframework.hackernewsreader296388)
 
 ## About
 
