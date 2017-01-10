@@ -2,7 +2,7 @@
 
 > The official code base for the HackReader application
 
-Version 1.1 - View in Play Store
+Version 1.1 - (View in the Play Store)[https://play.google.com/store/apps/details?id=com.ionicframework.hackernewsreader296388]
 
 ## About
 
@@ -16,9 +16,11 @@ HackReader is developed using the Ionic framework - if you are unfimilar it allo
 
 * Ionic
 * Angular JS
-* Node
+* Node JS
 
 Once you have the dependencies, make sure you build the app and run it using `ionic serve`. This will open up a test browser window so scale it down to mobile dimensions. When you want to export the code as an `.apk` file for your device run `ionic build`.
+
+> Note: Remeber to add the platform using `ionic platform add <platform>` (`android` or `ios`)
 
 ## APIs Used:
 * [HN Angolia Search API]() - Used for the New, Ask and Show pages. Aswell as the bookmark pages for some posts.
