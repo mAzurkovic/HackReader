@@ -14,7 +14,7 @@ HackReader is developed using the Ionic framework - if you are unfimilar it allo
 
 #### Dependencies
 
-* Ionic
+* Ionic 2
 * Angular JS
 * Node JS
 
