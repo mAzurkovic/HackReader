@@ -49,4 +49,4 @@ Once you have the dependencies, make sure you build the app and run it using `io
 * Load more posts to pages
 * Bookmarking posts :small_blue_diamond:
 * Open posts in Hacker News :small_blue_diamond:
-* View user who commented quick option
+* View user who commented quick option :small_blue_diamond:
