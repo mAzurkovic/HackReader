@@ -4,6 +4,8 @@
 
 Version 1.1 - [View in the Play Store](https://play.google.com/store/apps/details?id=com.ionicframework.hackernewsreader296388)
 
+[<img alt='HackReader' src="https://lh3.googleusercontent.com/yt1-8F8ukynJw1mbfnu5ajWNmYj3-smxJhMM9UTS0u4BXNQZbDRShYd-Hm2CDgjejWhR=h900-rw">]()
+
 ## About
 
 HackReader is a mobile client for reading the HackerNews. It takes data from the legacy HackerNews API, for future updates the goal is to migrate to the new Firebase HN API.
@@ -38,7 +40,7 @@ Once you have the dependencies, make sure you build the app and run it using `io
 * Add settings such as change theme, number of queries, etc.
 * Add gestures for opening links and posts :small_blue_diamond:
 * Statusbar color :small_blue_diamond:
-* User profiles
+* User profiles :small_blue_diamond:
 * Search capability :small_blue_diamond:
 * Add share post to Facebook, etc. :small_blue_diamond:
 * Parse and format `html` tags in comments and posts from JSON return :small_blue_diamond:
